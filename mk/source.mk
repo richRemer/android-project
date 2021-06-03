@@ -1,0 +1,9 @@
+R.java = $(gen)/$(subst .,/,$(app_package))/R.java
+sources = $(shell find $(src) -type f -name \*.java)
+objects = $(patsubst $(src)/%.java,$(obj)/%.class,$(sources))
+resources = $(shell find $(res) -type f)
+classes = $(dex)/classes.dex
+unaligned_apk = $(build)/$(app_name).unaligned.apk
+aligned_apk = $(build)/$(app_name).aligned.apk
+signed_apk = $(build)/$(app_name).apk
+keystore = $(sig)/keystore.jks
